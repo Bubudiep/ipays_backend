@@ -1,0 +1,953 @@
+[2024-03-06 22:49:58,87 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:50:09,72 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\core\settings.py changed, reloading.
+[2024-03-06 22:50:10,64 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:50:16,71 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.18, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,76 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,76 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49249][0m
+[2024-03-06 22:50:16,76 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,76 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49249][0m
+[2024-03-06 22:50:16,77 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,77 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49253][0m
+[2024-03-06 22:50:16,77 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49249][0m
+[2024-03-06 22:50:16,78 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,78 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49253][0m
+[2024-03-06 22:50:16,78 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49249][0m
+[2024-03-06 22:50:16,79 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49248][0m
+[2024-03-06 22:50:16,86 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:50:16,87 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49248][0m
+[2024-03-06 22:50:27,92 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\models.py changed, reloading.
+[2024-03-06 22:50:28,88 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:50:56,34 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:50:57,24 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:51:23,73 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:51:24,57 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:51:43,54 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.22, 127.0.0.1:49347][0m
+[2024-03-06 22:52:34,63 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:52:35,49 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:52:40,12 ERR django.request log_response 241]: Internal Server Error: /i/users/
+Traceback (most recent call last):
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\ipays\views.py", line 83, in list
+    ip_client = get_client_ip(self.client.cookies)
+                              ^^^^^^^^^^^
+AttributeError: 'UserViewsets' object has no attribute 'client'
+[2024-03-06 22:52:40,12 ERR django.channels.server log_action 160]: [35;1mHTTP GET /i/users/ 500 [0.10, 127.0.0.1:49479][0m
+[2024-03-06 22:52:40,22 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:52:40,22 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49479][0m
+[2024-03-06 22:52:47,59 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:52:48,46 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:52:53,17 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.18, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,21 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,22 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49501][0m
+[2024-03-06 22:52:53,22 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,22 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:49501][0m
+[2024-03-06 22:52:53,23 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,23 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49501][0m
+[2024-03-06 22:52:53,23 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.00, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,24 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49501][0m
+[2024-03-06 22:52:53,24 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49500][0m
+[2024-03-06 22:52:53,25 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49501][0m
+[2024-03-06 22:52:53,25 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49505][0m
+[2024-03-06 22:52:53,32 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:52:53,33 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49505][0m
+[2024-03-06 22:53:02,86 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:53:03,71 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:53:07,90 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.17, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49534][0m
+[2024-03-06 22:53:07,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49534][0m
+[2024-03-06 22:53:07,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.00, 127.0.0.1:49534][0m
+[2024-03-06 22:53:07,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.00, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.00, 127.0.0.1:49534][0m
+[2024-03-06 22:53:07,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.00, 127.0.0.1:49533][0m
+[2024-03-06 22:53:07,97 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49534][0m
+[2024-03-06 22:53:07,97 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49533][0m
+[2024-03-06 22:53:08,02 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:53:08,02 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49533][0m
+[2024-03-06 22:53:21,92 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:53:22,79 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:53:31,06 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.19, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49581][0m
+[2024-03-06 22:53:31,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49581][0m
+[2024-03-06 22:53:31,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49581][0m
+[2024-03-06 22:53:31,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49585][0m
+[2024-03-06 22:53:31,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49581][0m
+[2024-03-06 22:53:31,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49585][0m
+[2024-03-06 22:53:31,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49580][0m
+[2024-03-06 22:53:31,20 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:53:31,20 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49580][0m
+[2024-03-06 22:53:56,67 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:53:57,67 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:53:58,16 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.18, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,24 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.07, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,25 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.07, 127.0.0.1:49634][0m
+[2024-03-06 22:53:58,25 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,25 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:49636][0m
+[2024-03-06 22:53:58,26 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:49634][0m
+[2024-03-06 22:53:58,26 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,26 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.00, 127.0.0.1:49636][0m
+[2024-03-06 22:53:58,27 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.00, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,27 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.00, 127.0.0.1:49633][0m
+[2024-03-06 22:53:58,28 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49636][0m
+[2024-03-06 22:53:58,29 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.00, 127.0.0.1:49636][0m
+[2024-03-06 22:53:58,35 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:53:58,35 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,67 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.12, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,68 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,68 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.00, 127.0.0.1:49633][0m
+[2024-03-06 22:54:00,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:49634][0m
+[2024-03-06 22:54:00,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:49633][0m
+[2024-03-06 22:54:00,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49634][0m
+[2024-03-06 22:54:00,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49633][0m
+[2024-03-06 22:54:00,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49634][0m
+[2024-03-06 22:54:00,71 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49636][0m
+[2024-03-06 22:54:00,71 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49633][0m
+[2024-03-06 22:54:00,77 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:54:00,77 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49633][0m
+[2024-03-06 22:54:18,24 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:54:19,17 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:54:21,09 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.17, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49680][0m
+[2024-03-06 22:54:21,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49680][0m
+[2024-03-06 22:54:21,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49680][0m
+[2024-03-06 22:54:21,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.00, 127.0.0.1:49680][0m
+[2024-03-06 22:54:21,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49680][0m
+[2024-03-06 22:54:21,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:54:21,24 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:54:21,24 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,33 INF django.channels.server log_action 147]: [mHTTP GET /admin/ipays/message/ 200 [0.05, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,35 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,35 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:49680][0m
+[2024-03-06 22:54:51,36 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:49684][0m
+[2024-03-06 22:54:51,36 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.02, 127.0.0.1:49686][0m
+[2024-03-06 22:54:51,37 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:49687][0m
+[2024-03-06 22:54:51,37 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.02, 127.0.0.1:49688][0m
+[2024-03-06 22:54:51,37 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,38 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:49680][0m
+[2024-03-06 22:54:51,38 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.02, 127.0.0.1:49684][0m
+[2024-03-06 22:54:51,38 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.02, 127.0.0.1:49686][0m
+[2024-03-06 22:54:51,39 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.02, 127.0.0.1:49688][0m
+[2024-03-06 22:54:51,39 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.02, 127.0.0.1:49687][0m
+[2024-03-06 22:54:51,39 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.02, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,40 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:49680][0m
+[2024-03-06 22:54:51,40 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,41 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,41 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.00, 127.0.0.1:49680][0m
+[2024-03-06 22:54:51,42 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:49680][0m
+[2024-03-06 22:54:51,43 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:54:51,48 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:54:51,48 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49679][0m
+[2024-03-06 22:54:55,09 INF django.channels.server log_action 147]: [mHTTP GET /admin/oauth2_provider/accesstoken/ 200 [0.02, 127.0.0.1:49679][0m
+[2024-03-06 22:54:55,11 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,27 INF django.channels.server log_action 147]: [mHTTP GET /admin/oauth2_provider/accesstoken/ 200 [0.03, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,29 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.00, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,29 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:49680][0m
+[2024-03-06 22:55:04,29 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.01, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,30 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:49687][0m
+[2024-03-06 22:55:04,30 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.02, 127.0.0.1:49688][0m
+[2024-03-06 22:55:04,31 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:49686][0m
+[2024-03-06 22:55:04,31 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,31 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:49680][0m
+[2024-03-06 22:55:04,31 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.02, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,32 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.02, 127.0.0.1:49687][0m
+[2024-03-06 22:55:04,32 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.02, 127.0.0.1:49688][0m
+[2024-03-06 22:55:04,32 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.02, 127.0.0.1:49686][0m
+[2024-03-06 22:55:04,33 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.02, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,33 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:49680][0m
+[2024-03-06 22:55:04,33 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/search.svg 200 [0.02, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,34 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,34 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:49680][0m
+[2024-03-06 22:55:04,34 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.00, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,35 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:49680][0m
+[2024-03-06 22:55:04,35 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:49684][0m
+[2024-03-06 22:55:04,36 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.01, 127.0.0.1:49679][0m
+[2024-03-06 22:55:04,40 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:55:04,40 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49679][0m
+[2024-03-06 22:55:08,93 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:49742][0m
+[2024-03-06 22:55:08,94 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:49742][0m
+[2024-03-06 22:56:15,02 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:56:16,13 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:56:20,89 INF django.channels.server log_action 147]: [mHTTP GET /admin/oauth2_provider/accesstoken/ 200 [0.10, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,95 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.05, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,96 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.05, 127.0.0.1:49824][0m
+[2024-03-06 22:56:20,96 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,96 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:20,97 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,97 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,98 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,98 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:20,99 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:49824][0m
+[2024-03-06 22:56:20,99 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,00 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.00, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,00 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,00 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,01 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,01 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/search.svg 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,02 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,02 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,03 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,03 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,04 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:21,04 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:21,09 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:56:21,09 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49823][0m
+[2024-03-06 22:56:23,03 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.15, 127.0.0.1:49823][0m
+[2024-03-06 22:56:23,04 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:23,05 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:49824][0m
+[2024-03-06 22:56:23,05 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:49829][0m
+[2024-03-06 22:56:23,05 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:49831][0m
+[2024-03-06 22:56:23,06 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49832][0m
+[2024-03-06 22:56:23,06 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:49830][0m
+[2024-03-06 22:56:23,06 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.02, 127.0.0.1:49823][0m
+[2024-03-06 22:56:23,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.02, 127.0.0.1:49824][0m
+[2024-03-06 22:56:23,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.02, 127.0.0.1:49829][0m
+[2024-03-06 22:56:23,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:49831][0m
+[2024-03-06 22:56:23,08 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:23,15 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:56:23,15 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49823][0m
+[2024-03-06 22:56:26,34 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.12, 127.0.0.1:49823][0m
+[2024-03-06 22:56:26,36 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:49823][0m
+[2024-03-06 22:56:26,37 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:49831][0m
+[2024-03-06 22:56:26,37 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49832][0m
+[2024-03-06 22:56:26,37 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:49830][0m
+[2024-03-06 22:56:26,38 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.02, 127.0.0.1:49829][0m
+[2024-03-06 22:56:26,38 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.02, 127.0.0.1:49824][0m
+[2024-03-06 22:56:26,39 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.02, 127.0.0.1:49823][0m
+[2024-03-06 22:56:26,39 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.02, 127.0.0.1:49831][0m
+[2024-03-06 22:56:26,39 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.02, 127.0.0.1:49832][0m
+[2024-03-06 22:56:26,40 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:49830][0m
+[2024-03-06 22:56:26,40 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49823][0m
+[2024-03-06 22:56:26,48 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:56:26,48 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49823][0m
+[2024-03-06 22:56:29,67 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:49846][0m
+[2024-03-06 22:56:29,69 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:49846][0m
+[2024-03-06 22:56:36,13 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:56:37,34 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:56:37,66 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:49876][0m
+[2024-03-06 22:56:37,69 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.03, 127.0.0.1:49876][0m
+[2024-03-06 22:56:47,04 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.19, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.05, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.05, 127.0.0.1:49888][0m
+[2024-03-06 22:56:47,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49888][0m
+[2024-03-06 22:56:47,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49893][0m
+[2024-03-06 22:56:47,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49888][0m
+[2024-03-06 22:56:47,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49893][0m
+[2024-03-06 22:56:47,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49888][0m
+[2024-03-06 22:56:47,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49887][0m
+[2024-03-06 22:56:47,19 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:56:47,19 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:49887][0m
+[2024-03-06 22:57:14,47 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:57:15,43 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:58:19,16 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:58:20,03 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:58:22,63 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 22:58:22,63 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.18, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,68 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,68 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:49990][0m
+[2024-03-06 22:58:22,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:49990][0m
+[2024-03-06 22:58:22,69 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:49990][0m
+[2024-03-06 22:58:22,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,70 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:49990][0m
+[2024-03-06 22:58:22,71 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,71 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:49990][0m
+[2024-03-06 22:58:22,71 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:49989][0m
+[2024-03-06 22:58:22,78 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:58:22,78 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:49989][0m
+[2024-03-06 22:58:47,92 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 22:58:48,81 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 22:58:50,45 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 22:58:50,45 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.20, 127.0.0.1:50083][0m
+[2024-03-06 22:58:50,50 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:50083][0m
+[2024-03-06 22:58:50,50 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:50084][0m
+[2024-03-06 22:58:50,50 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:50083][0m
+[2024-03-06 22:58:50,51 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:50084][0m
+[2024-03-06 22:58:50,51 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:50088][0m
+[2024-03-06 22:58:50,51 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:50083][0m
+[2024-03-06 22:58:50,52 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:50084][0m
+[2024-03-06 22:58:50,52 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:50088][0m
+[2024-03-06 22:58:50,52 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:50083][0m
+[2024-03-06 22:58:50,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:50084][0m
+[2024-03-06 22:58:50,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:50088][0m
+[2024-03-06 22:58:50,59 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 22:58:50,59 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:50088][0m
+[2024-03-06 23:00:11,64 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:00:12,57 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:00:17,07 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 23:00:17,07 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.18, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:50232][0m
+[2024-03-06 23:00:17,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:50232][0m
+[2024-03-06 23:00:17,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.00, 127.0.0.1:50232][0m
+[2024-03-06 23:00:17,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.00, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,13 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:50239][0m
+[2024-03-06 23:00:17,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:50232][0m
+[2024-03-06 23:00:17,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:50231][0m
+[2024-03-06 23:00:17,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:50239][0m
+[2024-03-06 23:00:17,21 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:00:17,21 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:50239][0m
+[2024-03-06 23:00:23,09 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:50259][0m
+[2024-03-06 23:00:23,11 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:50259][0m
+[2024-03-06 23:00:24,82 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:50259][0m
+[2024-03-06 23:00:24,83 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:50259][0m
+[2024-03-06 23:00:25,32 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:50259][0m
+[2024-03-06 23:00:25,33 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:50259][0m
+[2024-03-06 23:00:30,03 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:00:30,92 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:00:32,44 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:50277][0m
+[2024-03-06 23:00:32,47 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.03, 127.0.0.1:50277][0m
+[2024-03-06 23:09:37,32 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:51061][0m
+[2024-03-06 23:09:37,33 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:51061][0m
+[2024-03-06 23:10:11,23 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:10:12,10 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:10:44,70 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:10:45,63 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:10:56,48 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 23:10:56,48 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.18, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.04, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.04, 127.0.0.1:51139][0m
+[2024-03-06 23:10:56,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:51139][0m
+[2024-03-06 23:10:56,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:51139][0m
+[2024-03-06 23:10:56,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:51139][0m
+[2024-03-06 23:10:56,56 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:51138][0m
+[2024-03-06 23:10:56,56 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:51143][0m
+[2024-03-06 23:10:56,57 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:51139][0m
+[2024-03-06 23:10:56,64 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:10:56,64 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:51139][0m
+[2024-03-06 23:11:16,59 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:11:17,48 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:11:34,42 ERR django.request log_response 241]: Internal Server Error: /i/users/
+Traceback (most recent call last):
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\ipays\views.py", line 82, in list
+    logger.debug()
+TypeError: Logger.debug() missing 1 required positional argument: 'msg'
+[2024-03-06 23:11:34,43 ERR django.channels.server log_action 160]: [35;1mHTTP GET /i/users/ 500 [0.08, 127.0.0.1:51195][0m
+[2024-03-06 23:11:34,50 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:11:34,50 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:51195][0m
+[2024-03-06 23:11:44,02 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:11:45,00 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:11:45,54 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.20, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,58 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,59 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.00, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,59 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,59 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,59 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,60 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.00, 127.0.0.1:51205][0m
+[2024-03-06 23:11:45,60 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,60 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:51206][0m
+[2024-03-06 23:11:45,61 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:51205][0m
+[2024-03-06 23:11:45,61 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:51212][0m
+[2024-03-06 23:11:45,61 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:51206][0m
+[2024-03-06 23:11:45,68 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:11:45,69 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:51206][0m
+[2024-03-06 23:11:48,51 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:51228][0m
+[2024-03-06 23:11:48,53 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:51228][0m
+[2024-03-06 23:12:01,28 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:12:02,17 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:12:04,55 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:51248][0m
+[2024-03-06 23:12:04,57 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:51248][0m
+[2024-03-06 23:13:09,21 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:13:10,09 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:23:29,74 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:24:05,22 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:24:50,24 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:24:51,17 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:25:05,56 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:52096][0m
+[2024-03-06 23:25:05,62 ERR django.request log_response 241]: Internal Server Error: /i/users/
+Traceback (most recent call last):
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\ipays\views.py", line 117, in list
+    user=check_token(self)
+         ^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\ipays\views.py", line 32, in check_token
+    user=AccessToken.objects.get(token=token).user
+         ^^^^^^^^^^^
+NameError: name 'AccessToken' is not defined
+[2024-03-06 23:25:05,62 ERR django.channels.server log_action 160]: [35;1mHTTP GET /i/users/ 500 [0.05, 127.0.0.1:52096][0m
+[2024-03-06 23:26:31,33 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:26:32,28 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:27:00,99 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:27:01,93 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:27:15,03 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:27:16,08 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:27:24,41 INF django.channels.server log_action 147]: [mHTTP GET / 200 [0.05, 127.0.0.1:52369][0m
+[2024-03-06 23:27:24,45 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/css/dashboard.css 304 [0.00, 127.0.0.1:52369][0m
+[2024-03-06 23:27:24,46 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.00, 127.0.0.1:52369][0m
+[2024-03-06 23:27:26,50 INF django.channels.server log_action 147]: [mHTTP GET /admin/oauth2_provider/accesstoken/ 200 [0.04, 127.0.0.1:52369][0m
+[2024-03-06 23:27:26,54 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52369][0m
+[2024-03-06 23:28:20,33 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:28:21,22 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:28:26,00 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:52450][0m
+[2024-03-06 23:28:26,03 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.03, 127.0.0.1:52450][0m
+[2024-03-06 23:28:35,73 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:28:36,63 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:29:14,67 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:29:15,55 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:31:55,88 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:31:56,81 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:31:59,68 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:52623][0m
+[2024-03-06 23:31:59,70 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:52623][0m
+[2024-03-06 23:32:01,15 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:52623][0m
+[2024-03-06 23:32:01,16 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:52623][0m
+[2024-03-06 23:32:01,66 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:52623][0m
+[2024-03-06 23:32:01,68 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:52623][0m
+[2024-03-06 23:32:08,65 INF django.channels.server log_action 147]: [mHTTP GET / 200 [0.05, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,82 INF django.channels.server log_action 147]: [mHTTP GET /admin/ipays/message/ 200 [0.04, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,89 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.05, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,89 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.05, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,89 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.05, 127.0.0.1:52644][0m
+[2024-03-06 23:32:11,90 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,91 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,91 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,92 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,92 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,93 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:52644][0m
+[2024-03-06 23:32:11,93 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,93 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,93 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:11,94 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,94 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,95 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,95 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,96 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:11,97 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:52643][0m
+[2024-03-06 23:32:11,97 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,75 INF django.channels.server log_action 147]: [mHTTP GET /admin/ipays/room/ 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,77 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,77 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:12,78 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:12,78 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:12,79 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:12,79 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:52651][0m
+[2024-03-06 23:32:12,79 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,80 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:12,80 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:12,81 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:12,81 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:12,81 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:12,82 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,82 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:12,83 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,83 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,85 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.00, 127.0.0.1:52642][0m
+[2024-03-06 23:32:12,85 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:12,86 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,41 INF django.channels.server log_action 147]: [mHTTP GET /admin/ipays/message/ 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,43 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.00, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,43 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:13,44 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:13,44 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:13,45 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:13,45 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:13,45 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,46 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:13,46 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:13,47 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:13,47 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:13,47 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:13,47 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,48 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:13,49 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.01, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,49 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,51 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.01, 127.0.0.1:52651][0m
+[2024-03-06 23:32:13,51 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:13,52 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,11 INF django.channels.server log_action 147]: [mHTTP GET /admin/ipays/room/ 200 [0.03, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,13 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/base.css 200 [0.00, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,14 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:14,15 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:52651][0m
+[2024-03-06 23:32:14,15 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/changelists.css 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:14,15 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:14,16 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:14,16 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,16 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:14,17 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/core.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:14,17 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:14,17 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/actions.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:14,18 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/urlify.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:14,18 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/prepopulate.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,19 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:14,19 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/theme.js 200 [0.00, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,20 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.00, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,21 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/filters.js 200 [0.00, 127.0.0.1:52650][0m
+[2024-03-06 23:32:14,22 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:14,22 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:52652][0m
+[2024-03-06 23:32:29,12 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.12, 127.0.0.1:52652][0m
+[2024-03-06 23:32:29,14 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:52652][0m
+[2024-03-06 23:32:29,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:29,15 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:29,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:52650][0m
+[2024-03-06 23:32:29,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:29,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:29,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:29,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:29,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:29,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:29,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:29,21 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css.map 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:36,91 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.11, 127.0.0.1:52651][0m
+[2024-03-06 23:32:36,93 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:52651][0m
+[2024-03-06 23:32:36,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:52650][0m
+[2024-03-06 23:32:36,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:36,94 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:36,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:36,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:36,95 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:36,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:36,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:36,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:36,96 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:52643][0m
+[2024-03-06 23:32:37,03 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:32:37,04 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52643][0m
+[2024-03-06 23:32:40,60 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.11, 127.0.0.1:52643][0m
+[2024-03-06 23:32:40,62 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:52643][0m
+[2024-03-06 23:32:40,62 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:52644][0m
+[2024-03-06 23:32:40,63 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:52642][0m
+[2024-03-06 23:32:40,63 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:52650][0m
+[2024-03-06 23:32:40,63 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:40,64 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.02, 127.0.0.1:52652][0m
+[2024-03-06 23:32:40,64 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.02, 127.0.0.1:52643][0m
+[2024-03-06 23:32:40,64 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.02, 127.0.0.1:52644][0m
+[2024-03-06 23:32:40,65 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.02, 127.0.0.1:52642][0m
+[2024-03-06 23:32:40,65 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:52650][0m
+[2024-03-06 23:32:40,66 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.02, 127.0.0.1:52651][0m
+[2024-03-06 23:32:40,71 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:32:40,72 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52651][0m
+[2024-03-06 23:32:50,05 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:32:51,03 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:33:29,50 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:33:30,40 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:34:36,50 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:34:37,37 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:34:39,35 ERR django.request log_response 241]: Internal Server Error: /i/users/
+Traceback (most recent call last):
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "D:\django\ipays\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\asgiref\sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\django\ipays\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\django\ipays\ipays\views.py", line 124, in list
+    qs_data=qs_data.objects.filter(username=user.username)
+            ^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'objects'
+[2024-03-06 23:34:39,35 ERR django.channels.server log_action 160]: [35;1mHTTP GET /i/users/ 500 [0.06, 127.0.0.1:52907][0m
+[2024-03-06 23:34:39,45 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:34:39,45 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52907][0m
+[2024-03-06 23:34:51,67 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:34:52,72 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:35:03,74 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:35:04,63 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:35:08,11 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.16, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:52943][0m
+[2024-03-06 23:35:08,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:52943][0m
+[2024-03-06 23:35:08,16 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:35:08,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,17 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.00, 127.0.0.1:52943][0m
+[2024-03-06 23:35:08,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:35:08,19 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:35:08,25 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:35:08,26 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52942][0m
+[2024-03-06 23:35:15,23 INF django.channels.server log_action 147]: [mHTTP GET /admin/auth/user/ 200 [0.04, 127.0.0.1:52942][0m
+[2024-03-06 23:35:15,26 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:35:15,27 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52942][0m
+[2024-03-06 23:35:15,31 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:35:17,88 INF django.channels.server log_action 147]: [mHTTP GET /admin/auth/user/add/ 200 [0.04, 127.0.0.1:52942][0m
+[2024-03-06 23:35:17,90 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/css/forms.css 304 [0.00, 127.0.0.1:52942][0m
+[2024-03-06 23:35:17,90 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/js/prepopulate_init.js 304 [0.01, 127.0.0.1:52948][0m
+[2024-03-06 23:35:17,91 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/css/widgets.css 304 [0.00, 127.0.0.1:52948][0m
+[2024-03-06 23:35:17,91 INF django.channels.server log_action 151]: [36mHTTP GET /static/admin/js/change_form.js 304 [0.00, 127.0.0.1:52948][0m
+[2024-03-06 23:35:17,92 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52943][0m
+[2024-03-06 23:35:41,54 INF django.channels.server log_action 153]: [32mHTTP POST /admin/auth/user/add/ 302 [0.36, 127.0.0.1:52943][0m
+[2024-03-06 23:35:41,60 INF django.channels.server log_action 147]: [mHTTP GET /admin/auth/user/2/change/ 200 [0.06, 127.0.0.1:52943][0m
+[2024-03-06 23:35:41,63 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:35:41,64 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/calendar.js 200 [0.02, 127.0.0.1:52948][0m
+[2024-03-06 23:35:41,65 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/SelectFilter2.js 200 [0.03, 127.0.0.1:52950][0m
+[2024-03-06 23:35:41,66 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.04, 127.0.0.1:52942][0m
+[2024-03-06 23:35:41,68 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/js/SelectBox.js 200 [0.06, 127.0.0.1:52949][0m
+[2024-03-06 23:35:41,71 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-unknown.svg 200 [0.01, 127.0.0.1:52949][0m
+[2024-03-06 23:35:41,72 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/selector-icons.svg 200 [0.02, 127.0.0.1:52942][0m
+[2024-03-06 23:35:41,73 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-unknown-alt.svg 200 [0.02, 127.0.0.1:52950][0m
+[2024-03-06 23:35:41,74 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.03, 127.0.0.1:52948][0m
+[2024-03-06 23:35:41,75 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-clock.svg 200 [0.04, 127.0.0.1:52943][0m
+[2024-03-06 23:35:50,74 INF django.channels.server log_action 147]: [mHTTP GET /admin/auth/user/ 200 [0.03, 127.0.0.1:52943][0m
+[2024-03-06 23:35:50,76 INF django.channels.server log_action 147]: [mHTTP GET /static/admin/img/icon-no.svg 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:35:50,76 INF django.channels.server log_action 147]: [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:52948][0m
+[2024-03-06 23:35:54,80 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53002][0m
+[2024-03-06 23:35:54,81 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53002][0m
+[2024-03-06 23:36:26,51 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.11, 127.0.0.1:52948][0m
+[2024-03-06 23:36:26,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:52948][0m
+[2024-03-06 23:36:26,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:52950][0m
+[2024-03-06 23:36:26,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:36:26,53 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:36:26,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:52949][0m
+[2024-03-06 23:36:26,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:52948][0m
+[2024-03-06 23:36:26,54 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:52950][0m
+[2024-03-06 23:36:26,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:36:26,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:36:26,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:52949][0m
+[2024-03-06 23:36:26,55 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:52948][0m
+[2024-03-06 23:36:26,62 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:36:26,62 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52948][0m
+[2024-03-06 23:36:27,07 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.11, 127.0.0.1:52948][0m
+[2024-03-06 23:36:27,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.00, 127.0.0.1:52948][0m
+[2024-03-06 23:36:27,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:36:27,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:36:27,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.01, 127.0.0.1:52949][0m
+[2024-03-06 23:36:27,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.01, 127.0.0.1:52950][0m
+[2024-03-06 23:36:27,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.01, 127.0.0.1:53025][0m
+[2024-03-06 23:36:27,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:52948][0m
+[2024-03-06 23:36:27,11 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:52943][0m
+[2024-03-06 23:36:27,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:52942][0m
+[2024-03-06 23:36:27,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.02, 127.0.0.1:52949][0m
+[2024-03-06 23:36:27,12 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.02, 127.0.0.1:52950][0m
+[2024-03-06 23:36:27,17 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:36:27,17 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:52950][0m
+[2024-03-06 23:37:05,08 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:37:06,02 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:37:10,14 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.14, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:53068][0m
+[2024-03-06 23:37:10,18 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,19 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:53068][0m
+[2024-03-06 23:37:10,19 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,19 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.00, 127.0.0.1:53068][0m
+[2024-03-06 23:37:10,19 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,20 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:53068][0m
+[2024-03-06 23:37:10,20 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.01, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,20 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:53068][0m
+[2024-03-06 23:37:10,21 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:53067][0m
+[2024-03-06 23:37:10,27 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:37:10,27 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:53067][0m
+[2024-03-06 23:37:18,27 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\views.py changed, reloading.
+[2024-03-06 23:37:19,22 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:37:21,02 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.16, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap.min.css 200 [0.03, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/bootstrap-tweaks.css 200 [0.03, 127.0.0.1:53093][0m
+[2024-03-06 23:37:21,07 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/prettify.css 200 [0.00, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,08 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/css/default.css 200 [0.00, 127.0.0.1:53093][0m
+[2024-03-06 23:37:21,08 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/jquery-3.5.1.min.js 200 [0.00, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,08 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/ajax-form.js 200 [0.00, 127.0.0.1:53093][0m
+[2024-03-06 23:37:21,08 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/csrf.js 200 [0.01, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,09 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/bootstrap.min.js 200 [0.01, 127.0.0.1:53093][0m
+[2024-03-06 23:37:21,09 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/prettify-min.js 200 [0.00, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,09 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/js/default.js 200 [0.01, 127.0.0.1:53093][0m
+[2024-03-06 23:37:21,10 INF django.channels.server log_action 147]: [mHTTP GET /static/rest_framework/img/grid.png 200 [0.01, 127.0.0.1:53092][0m
+[2024-03-06 23:37:21,15 WAR django.request log_response 241]: Not Found: /favicon.ico
+[2024-03-06 23:37:21,15 WAR django.channels.server log_action 155]: [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:53092][0m
+[2024-03-06 23:37:27,53 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:37:27,54 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53115][0m
+[2024-03-06 23:38:18,92 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:38:18,93 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53115][0m
+[2024-03-06 23:38:23,11 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:38:23,13 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53115][0m
+[2024-03-06 23:38:23,74 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:38:23,77 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53115][0m
+[2024-03-06 23:38:46,30 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:38:46,31 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53115][0m
+[2024-03-06 23:39:07,37 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:53115][0m
+[2024-03-06 23:39:07,39 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53115][0m
+[2024-03-06 23:39:10,29 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:39:10,31 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53115][0m
+[2024-03-06 23:39:10,75 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53115][0m
+[2024-03-06 23:39:10,76 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53115][0m
+[2024-03-06 23:41:12,85 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:12,87 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:15,23 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:15,24 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:15,89 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:15,91 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,20 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,22 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,41 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,43 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,65 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,66 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,82 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:16,84 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:19,77 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53314][0m
+[2024-03-06 23:41:19,79 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:26,35 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:41:26,37 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53314][0m
+[2024-03-06 23:42:50,42 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53417][0m
+[2024-03-06 23:42:50,43 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53417][0m
+[2024-03-06 23:43:20,04 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53417][0m
+[2024-03-06 23:43:20,06 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53417][0m
+[2024-03-06 23:44:38,69 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53523][0m
+[2024-03-06 23:44:38,71 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53523][0m
+[2024-03-06 23:48:03,55 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53702][0m
+[2024-03-06 23:48:03,57 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53702][0m
+[2024-03-06 23:48:25,44 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:53721][0m
+[2024-03-06 23:48:25,46 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53721][0m
+[2024-03-06 23:49:04,70 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53746][0m
+[2024-03-06 23:49:04,71 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53746][0m
+[2024-03-06 23:50:09,37 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:50:09,39 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53798][0m
+[2024-03-06 23:50:25,88 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:50:25,90 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:50:42,65 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:50:42,67 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53798][0m
+[2024-03-06 23:50:48,30 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:50:48,31 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:50:53,74 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:50:53,76 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53798][0m
+[2024-03-06 23:51:27,86 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:27,88 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,27 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,29 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,47 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,49 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,63 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,65 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,79 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:28,81 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:53798][0m
+[2024-03-06 23:51:36,62 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:36,64 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:37,00 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:37,02 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:51:37,32 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:51:37,33 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:05,68 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:05,69 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,24 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,25 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,58 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,59 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,85 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:06,86 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:07,07 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:07,09 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:52:33,29 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:52:33,31 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:53:29,15 INF django.channels.server log_action 147]: [mHTTP OPTIONS /chat/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:53:29,15 INF django.channels.server log_action 147]: [mHTTP GET /chat/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:12,77 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:12,78 INF django.channels.server log_action 153]: [32mHTTP GET /i/oauth2-info/ 302 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:54:12,78 INF django.channels.server log_action 147]: [mHTTP OPTIONS /admin/login/?next=/i/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:12,80 INF django.channels.server log_action 147]: [mHTTP GET /admin/login/?next=/i/oauth2-info/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:54:14,12 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:14,12 INF django.channels.server log_action 153]: [32mHTTP GET /i/oauth2-info/ 302 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:14,13 INF django.channels.server log_action 147]: [mHTTP OPTIONS /admin/login/?next=/i/oauth2-info/ 200 [0.00, 127.0.0.1:54023][0m
+[2024-03-06 23:54:14,13 INF django.channels.server log_action 147]: [mHTTP GET /admin/login/?next=/i/oauth2-info/ 200 [0.01, 127.0.0.1:54023][0m
+[2024-03-06 23:54:14,32 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:54023][0m
+[2024-03-06 23:54:14,33 INF django.channels.server log_action 153]: [32mHTTP GET /i/oauth2-info/ 302 [0.00, 127.0.0.1:54023][0m
+[2024-03-06 23:54:14,33 INF django.channels.server log_action 147]: [mHTTP OPTIONS /admin/login/?next=/i/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:14,34 INF django.channels.server log_action 147]: [mHTTP GET /admin/login/?next=/i/oauth2-info/ 200 [0.01, 127.0.0.1:53798][0m
+[2024-03-06 23:54:15,81 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:15,81 INF django.channels.server log_action 153]: [32mHTTP GET /i/oauth2-info/ 302 [0.00, 127.0.0.1:53798][0m
+[2024-03-06 23:54:15,82 INF django.channels.server log_action 147]: [mHTTP OPTIONS /admin/login/?next=/i/oauth2-info/ 200 [0.00, 127.0.0.1:54023][0m
+[2024-03-06 23:54:15,82 INF django.channels.server log_action 147]: [mHTTP GET /admin/login/?next=/i/oauth2-info/ 200 [0.01, 127.0.0.1:54023][0m
+[2024-03-06 23:56:47,50 INF django.utils.autoreload trigger_reload 266]: D:\django\ipays\ipays\ipays_urls.py changed, reloading.
+[2024-03-06 23:56:48,49 INF django.utils.autoreload run_with_reloader 668]: Watching for file changes with StatReloader
+[2024-03-06 23:57:03,23 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.01, 127.0.0.1:54199][0m
+[2024-03-06 23:57:03,24 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.01, 127.0.0.1:54199][0m
+[2024-03-06 23:57:03,25 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54199][0m
+[2024-03-06 23:57:03,93 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.68, 127.0.0.1:54199][0m
+[2024-03-06 23:57:04,04 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54199][0m
+[2024-03-06 23:57:04,06 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:54199][0m
+[2024-03-06 23:57:05,93 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:54199][0m
+[2024-03-06 23:57:05,95 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54199][0m
+[2024-03-06 23:57:06,81 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54199][0m
+[2024-03-06 23:57:06,82 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54199][0m
+[2024-03-06 23:57:54,23 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:57:54,24 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:10,71 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 23:58:10,71 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:11,65 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:11,66 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:12,32 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.66, 127.0.0.1:54234][0m
+[2024-03-06 23:58:12,43 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:12,45 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:54234][0m
+[2024-03-06 23:58:18,00 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 23:58:18,00 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:40,60 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:40,61 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:41,27 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.65, 127.0.0.1:54234][0m
+[2024-03-06 23:58:41,37 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:41,39 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:47,80 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:47,82 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:50,95 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-06 23:58:50,95 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.01, 127.0.0.1:54234][0m
+[2024-03-06 23:58:52,01 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:52,02 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54234][0m
+[2024-03-06 23:58:52,69 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.67, 127.0.0.1:54234][0m
+[2024-03-06 23:59:53,55 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-06 23:59:53,57 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.02, 127.0.0.1:54327][0m
+[2024-03-07 00:00:00,61 WAR django.request log_response 241]: Bad Request: /i/users/
+[2024-03-07 00:00:00,61 WAR django.channels.server log_action 157]: [31;1mHTTP GET /i/users/ 400 [0.01, 127.0.0.1:54327][0m
+[2024-03-07 00:00:03,01 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:00:03,02 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:00:03,68 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.66, 127.0.0.1:54327][0m
+[2024-03-07 00:00:29,05 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:00:29,06 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.01, 127.0.0.1:54327][0m
+[2024-03-07 00:00:29,06 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:00:29,74 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.68, 127.0.0.1:54327][0m
+[2024-03-07 00:01:04,21 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/oauth2-info/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:01:04,22 INF django.channels.server log_action 147]: [mHTTP GET /i/oauth2-info/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:01:04,23 INF django.channels.server log_action 147]: [mHTTP OPTIONS /o/token/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:01:04,90 INF django.channels.server log_action 147]: [mHTTP POST /o/token/ 200 [0.68, 127.0.0.1:54327][0m
+[2024-03-07 00:01:05,06 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:01:05,08 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54327][0m
+[2024-03-07 00:01:11,84 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54327][0m
+[2024-03-07 00:01:11,85 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54327][0m
+[2024-03-07 00:02:19,28 INF django.channels.server log_action 147]: [mHTTP OPTIONS /i/users/ 200 [0.00, 127.0.0.1:54455][0m
+[2024-03-07 00:02:19,30 INF django.channels.server log_action 147]: [mHTTP GET /i/users/ 200 [0.01, 127.0.0.1:54455][0m
