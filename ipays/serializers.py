@@ -29,3 +29,14 @@ class UserSerializer(serializers.ModelSerializer):
 
 class PasswordSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=255)
+
+class PhotosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Photos
+        fields = "__all__"
+ 
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = "__all__"
+ 

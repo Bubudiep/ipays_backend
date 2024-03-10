@@ -18,6 +18,23 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+def generate_response_json(result:str, message:str, data:dict={}):
+    """_summary_
+
+    Args:
+        result (str): PASS / FAIL
+        message (str): Description
+        data (dict): dict data
+
+    Raises:
+        Exception: _description_
+
+    Returns:
+        dict: Response Packaged
+    """
+    # logger.debug(f"Result: {result}, Message: {message}, Data: {data}")
+    return {"result": result, "message": message, "data": data}
+
 def to_json(result:str, message:str, data:dict={}):
     return {"result": result, "message": message, "data": data}
 
@@ -132,4 +149,130 @@ class UserViewsets(viewsets.ModelViewSet):
         
         serializer = self.get_serializer(qs_data, many=True)
         return Response(serializer.data)
- 
+            
+class PhotosViewsets(viewsets.ModelViewSet):
+    queryset = Photos.objects.all()
+    serializer_class = PhotosSerializer
+    pagination_class = StandardPagesPagination
+    permission_classes_by_action = {
+        'get': [permissions.AllowAny()],
+        'retrieve': [permissions.AllowAny()],
+        'create': [permissions.AllowAny()],
+        'list': [permissions.AllowAny()],
+        'update': [permissions.AllowAny()],
+        'partial_update': [permissions.AllowAny()],
+    }
+    
+    def get_permissions(self):
+        default_permissions = [permissions.IsAuthenticated()]
+        return self.permission_classes_by_action.get(self.action, default_permissions)
+    
+    def update(self, request, *args, **kwargs):
+        try:
+            return super().update(request, *args, **kwargs)
+        except Exception as e:
+            return Response({"message": {f"{e}"}}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def create(self, request, *args, **kwargs):
+        try:
+            return super().create(request, *args, **kwargs)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+    
+    def list(self, request):
+        try:
+            qs_data = self.get_queryset()
+            ip_client = get_client_ip(request)
+             
+            page_size = self.request.query_params.get('page_size')
+            if page_size is not None:
+                self.pagination_class.page_size = int(page_size)
+                     
+            page = self.paginate_queryset(qs_data)
+            if page is not None:
+                # logger.debug(page)
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+                     
+            serializer = self.get_serializer(qs_data, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            # logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+                 
+class UserProfileViewsets(viewsets.ModelViewSet):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    pagination_class = StandardPagesPagination
+    permission_classes_by_action = {
+        'get': [permissions.AllowAny()],
+        'retrieve': [permissions.AllowAny()],
+        'create': [permissions.AllowAny()],
+        'list': [permissions.AllowAny()],
+        'update': [permissions.AllowAny()],
+        'partial_update': [permissions.AllowAny()],
+    }
+    
+    def get_permissions(self):
+        default_permissions = [permissions.IsAuthenticated()]
+        return self.permission_classes_by_action.get(self.action, default_permissions)
+    
+    def update(self, request, *args, **kwargs):
+        try:
+            return super().update(request, *args, **kwargs)
+        except Exception as e:
+            return Response({"message": {f"{e}"}}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def create(self, request, *args, **kwargs):
+        try:
+            return super().create(request, *args, **kwargs)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+    
+    def list(self, request):
+        try:
+            qs_data = self.get_queryset()
+            ip_client = get_client_ip(request)
+             
+            page_size = self.request.query_params.get('page_size')
+            if page_size is not None:
+                self.pagination_class.page_size = int(page_size)
+                     
+            page = self.paginate_queryset(qs_data)
+            if page is not None:
+                # logger.debug(page)
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+                     
+            serializer = self.get_serializer(qs_data, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            # logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+     
