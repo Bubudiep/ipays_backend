@@ -1,8 +1,13 @@
 # chat/models.py
-
+from base64 import b64encode
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils.safestring import mark_safe
+import logging
+logger = logging.getLogger(__name__)
+
 import datetime
+
 
 class Room(models.Model):
     name = models.CharField(max_length=128)
@@ -37,15 +42,28 @@ class Photos(models.Model):
     file_name = models.CharField(max_length=100, default="", blank=True, null=True)
     file_type = models.CharField(max_length=100, default="", blank=True, null=True)
     file_size = models.IntegerField(blank=True, null=True)
-    img= models.BinaryField(blank=True, null=True)
+    img= models.TextField()
+    user = models.ForeignKey(to=User, on_delete=models.SET_NULL, blank=True, null=True)
     Comment = models.CharField(max_length=1024, default="", blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def img_tag(self):
+        try:
+            return mark_safe('<img src = "{}" style="width:100px;border-radius: 10px;">'.format(
+                self.img
+            ))
+        except Exception as e:
+            logger.debug(e)
+            return "aa"
+    img_tag.short_description = 'Image'
+    img_tag.allow_tags = True
+
     class Meta:
         ordering = ['-id']
     def __str__(self): 
-        return f"{self.user.file_name}"
+        return f"{self.file_name}"
+    
     
 class UserProfile(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
@@ -85,15 +103,19 @@ class UserServices(models.Model):
     ServiceCode = models.ForeignKey(to=Services, on_delete=models.SET_NULL, null=True, blank=True)
     Status = models.CharField(max_length=100, default="ACTIVE", choices=Status_CHOICES, blank=True, null=True)
     
+    Avatar = models.ForeignKey(to=Photos, on_delete=models.SET_NULL, null=True, blank=True)
     Name = models.CharField(max_length=225)
-    Hotline = models.CharField(max_length=100)
-    Facebook = models.CharField(max_length=100)
+    Sologan = models.CharField(max_length=225, blank=True, null=True)
+    Hotline = models.CharField(max_length=100, blank=True, null=True)
+    Zalo = models.CharField(max_length=100, blank=True, null=True)
+    Facebook = models.CharField(max_length=100, blank=True, null=True)
     IsPublic = models.BooleanField(default=True)
 
     adr_tinh = models.CharField(max_length=100, default="", blank=True)
-    adr_thanhpho = models.CharField(max_length=100, default="", blank=True)
     adr_huyen = models.CharField(max_length=100, default="", blank=True)
     adr_xa = models.CharField(max_length=100, default="", blank=True)
+    adr_thon = models.CharField(max_length=100, default="", blank=True)
+    adr_details = models.CharField(max_length=100, default="", blank=True)
 
     comment = models.CharField(max_length=1024, default="", blank=True)
     created = models.DateTimeField(auto_now_add=True)

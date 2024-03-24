@@ -5,15 +5,13 @@ import os, environ
 env = environ.Env(
     DJANGO_LOG_LEVEL=(str, 'DEBUG'),
 )
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-hc0@t%yva8y!z$_dlo*#lhj4-gywy!q-)x@gz7a6g19-u9(5z)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -31,20 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'ipays',  # new
-    'channels',  # new
     'oauth2_provider',
     'corsheaders',
 ]
 WSGI_APPLICATION = 'core.wsgi.application'
 ASGI_APPLICATION = 'core.asgi.application'  # new
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 30  # Max 30MB
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240   # higher than the count of fields
 
@@ -69,8 +58,8 @@ OAUTH2_PROVIDER = {
 
 
 OAUTH2_INFO = {
-    "client_id": "4OG1rzVWWNjzi7LTBsHtjX3efhCdwzyOPr471JtH",
-    "client_secret": "U3OYQqsOMVevk6WFXyf4rhTZbsGKUQ0yOAzZGREq6juNao5ORT81YPdmZcwJZzoJ0biCz6z2GSABeHL9YLOCeow1CBEwcktXqWdv1XcMOmYfj9K13vYYZMjLJDmwXy1t"
+    "client_id": "EcLPNRzCUOUOl7YmEAuN6lY99qaKbQ2kC0jK3kzR",
+    "client_secret": "9e77jSvVMcV3BxsY51cAlzYTW9OtLsqZLp2mxHc2gb7xQEj3IEtUjHTWDffwrAmXLIJfAz2WtmuKIJIWfUxMkzqTc7KpPE96AmHijdkLyi0FXGOkGebWVBHvVpRAfWyT"
 }
 
 MIDDLEWARE = [
@@ -155,14 +144,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 100000000 # higher than the count of fields
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT=os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

@@ -135,12 +135,9 @@ class UserViewsets(viewsets.ModelViewSet):
         qs_data = self.get_queryset()
         ip_client = get_client_ip(request)
         user=check_token(self)
-        logger.debug(user)
         if user is None:
             return Response("No authorization", status=HTTP_400_BAD_REQUEST)
-        
-        if user.username != "admin":
-            qs_data=qs_data.filter(username=user.username)
+        qs_data=qs_data.filter(username=user.username)
         page = self.paginate_queryset(qs_data)
         if page is not None:
             # logger.debug(page)
@@ -175,6 +172,18 @@ class PhotosViewsets(viewsets.ModelViewSet):
     
     def create(self, request, *args, **kwargs):
         try:
+            if self.request.user.is_anonymous:
+                token = self.request.headers.get('Authorization')
+                if token is None:
+                    return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
+                else:
+                    user=AccessToken.objects.get(token=token).user
+                    _mutable = request.data._mutable
+                    request.data._mutable = True
+                    request.data['user']=user.id
+                    request.data._mutable = _mutable
+            else:
+                return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
             return super().create(request, *args, **kwargs)
         except Exception as e:
             exc_type, exc_obj, exc_tb = sys.exc_info()
@@ -191,6 +200,11 @@ class PhotosViewsets(viewsets.ModelViewSet):
             qs_data = self.get_queryset()
             ip_client = get_client_ip(request)
              
+            user=check_token(self)
+            if user is None:
+                return Response("No authorization", status=HTTP_400_BAD_REQUEST)
+            qs_data=qs_data.filter(user__username=user.username)
+
             page_size = self.request.query_params.get('page_size')
             if page_size is not None:
                 self.pagination_class.page_size = int(page_size)
@@ -254,6 +268,188 @@ class UserProfileViewsets(viewsets.ModelViewSet):
             qs_data = self.get_queryset()
             ip_client = get_client_ip(request)
              
+            user=check_token(self)
+            if user is None:
+                return Response("No authorization", status=HTTP_400_BAD_REQUEST)
+            qs_data=qs_data.filter(user__username=user.username)
+
+            page_size = self.request.query_params.get('page_size')
+            if page_size is not None:
+                self.pagination_class.page_size = int(page_size)
+                     
+            page = self.paginate_queryset(qs_data)
+            if page is not None:
+                # logger.debug(page)
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+                     
+            serializer = self.get_serializer(qs_data, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            # logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+        
+class ServicesViewsets(viewsets.ModelViewSet):
+    queryset = Services.objects.all()
+    serializer_class = ServicesSerializer
+    pagination_class = StandardPagesPagination
+    permission_classes_by_action = {
+        'get': [permissions.AllowAny()],
+        'retrieve': [permissions.AllowAny()],
+        'create': [permissions.AllowAny()],
+        'list': [permissions.AllowAny()],
+        'update': [permissions.AllowAny()],
+        'partial_update': [permissions.AllowAny()],
+    }
+    
+    def get_permissions(self):
+        default_permissions = [permissions.IsAuthenticated()]
+        return self.permission_classes_by_action.get(self.action, default_permissions)
+    
+    def update(self, request, *args, **kwargs):
+        try:
+            return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
+            return super().update(request, *args, **kwargs)
+        except Exception as e:
+            return Response({"message": {f"{e}"}}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def create(self, request, *args, **kwargs):
+        try:
+            return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
+            return super().create(request, *args, **kwargs)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+    
+    def list(self, request):
+        try:
+            qs_data = self.get_queryset()
+            ip_client = get_client_ip(request)
+
+            page_size = self.request.query_params.get('page_size')
+            if page_size is not None:
+                self.pagination_class.page_size = int(page_size)
+                     
+            page = self.paginate_queryset(qs_data)
+            if page is not None:
+                # logger.debug(page)
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+                     
+            serializer = self.get_serializer(qs_data, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            # logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+     
+class UserServicesViewsets(viewsets.ModelViewSet):
+    queryset = UserServices.objects.all()
+    serializer_class = UserServicesSerializer
+    pagination_class = StandardPagesPagination
+    permission_classes_by_action = {
+        'get': [permissions.AllowAny()],
+        'retrieve': [permissions.AllowAny()],
+        'create': [permissions.AllowAny()],
+        'list': [permissions.AllowAny()],
+        'update': [permissions.AllowAny()],
+        'partial_update': [permissions.AllowAny()],
+    }
+    
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        user=check_token(self)
+        if user is None:
+            return Response("No authorization", status=HTTP_400_BAD_REQUEST)
+        else:
+            if user.username==instance.user.username:
+                s = self.get_serializer(instance=instance)
+                return Response(data=s.data)
+            else:
+                return Response("No authorization", status=status.HTTP_403_FORBIDDEN)
+    
+    def partial_update(self, request, pk=None):
+        instance = self.get_object()
+        user=check_token(self)
+        if user is None:
+            return Response("No authorization", status=HTTP_400_BAD_REQUEST)
+        else:
+            if user.username==instance.user.username:
+                serializer = UserServicesSerializer(data=request.data, partial=True)
+                serializer.save()
+                serializer.is_valid(raise_exception=True)
+                return Response(serializer.data)
+            else:
+                return Response("No authorization", status=status.HTTP_403_FORBIDDEN)
+    
+    def get_permissions(self):
+        default_permissions = [permissions.IsAuthenticated()]
+        return self.permission_classes_by_action.get(self.action, default_permissions)
+    
+    def update(self, request, *args, **kwargs):
+        try:
+            return super().update(request, *args, **kwargs)
+        except Exception as e:
+            return Response({"message": {f"{e}"}}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def create(self, request, *args, **kwargs):
+        try:
+            if self.request.user.is_anonymous:
+                token = self.request.headers.get('Authorization')
+                if token is None:
+                    return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
+                else:
+                    user=AccessToken.objects.get(token=token).user
+                    _mutable = request.data._mutable
+                    request.data._mutable = True
+                    request.data['user']=user.id
+                    request.data._mutable = _mutable
+                    svcode=request.data.get('ServiceCode',None)
+                    logger.debug(svcode)
+                    qs_resign=UserServices.objects.filter(ServiceCode__ServiceCode=svcode,user__username=user.username)
+                    if len(qs_resign) > 1:
+                        return Response('Hiện tại bạn chỉ được đăng ký 1 dịch vụ loại này!', status=status.HTTP_401_UNAUTHORIZED)
+            else:
+                return Response('You must be an authenticated user', status=status.HTTP_401_UNAUTHORIZED)
+            logger.debug(f"{request.data}")
+            return super().create(request, *args, **kwargs)
+        except Exception as e:
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            lineno = exc_tb.tb_lineno
+            file_path = exc_tb.tb_frame.f_code.co_filename
+            file_name = os.path.basename(file_path)
+            message = f"[{file_name}_{lineno}] {str(e)}"
+            logger.debug(message)
+            res_data = generate_response_json("FAIL", message)
+            return Response(res_data, status=HTTP_404_NOT_FOUND)
+    
+    def list(self, request):
+        try:
+            qs_data = self.get_queryset()
+            ip_client = get_client_ip(request)
+             
+            user=check_token(self)
+            if user is None:
+                return Response("No authorization", status=HTTP_400_BAD_REQUEST)
+            qs_data=qs_data.filter(user__username=user.username)
+            
             page_size = self.request.query_params.get('page_size')
             if page_size is not None:
                 self.pagination_class.page_size = int(page_size)
