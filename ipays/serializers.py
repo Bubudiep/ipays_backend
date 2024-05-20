@@ -112,17 +112,18 @@ class US_DeskSerializer(serializers.ModelSerializer):
     class Meta:
         model = US_Desk
         fields = "__all__"
+class US_MenuItemsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = US_MenuItems
+        fields = "__all__"
 class US_MenuSerializer(serializers.ModelSerializer):
+    Items_list = US_MenuItemsSerializer(many=True, read_only=True)
     class Meta:
         model = US_Menu
         fields = "__all__"
 class US_MenuTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = US_MenuType
-        fields = "__all__"
-class US_MenuItemsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = US_MenuItems
         fields = "__all__"
 class US_OrdersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -139,4 +140,8 @@ class VoucherSerializer(serializers.ModelSerializer):
 class US_HistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = US_History
+        fields = "__all__"
+class IpaysSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ipays
         fields = "__all__"

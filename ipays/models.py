@@ -71,9 +71,10 @@ class UserProfile(models.Model):
     fullname = models.CharField(max_length=100, default="", blank=True)
     birthday = models.DateField(null=True, blank=True)
     adr_tinh = models.CharField(max_length=100, default="", blank=True)
-    adr_thanhpho = models.CharField(max_length=100, default="", blank=True)
     adr_huyen = models.CharField(max_length=100, default="", blank=True)
     adr_xa = models.CharField(max_length=100, default="", blank=True)
+    adr_details = models.CharField(max_length=100, default="", blank=True)
+    adr_full = models.CharField(max_length=300, default="", blank=True)
     comment = models.CharField(max_length=1024, default="", blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
@@ -114,8 +115,9 @@ class UserServices(models.Model):
     adr_tinh = models.CharField(max_length=100, default="", blank=True)
     adr_huyen = models.CharField(max_length=100, default="", blank=True)
     adr_xa = models.CharField(max_length=100, default="", blank=True)
-    adr_thon = models.CharField(max_length=100, default="", blank=True)
     adr_details = models.CharField(max_length=100, default="", blank=True)
+    adr_full = models.CharField(max_length=300, default="", blank=True)
+    location = models.CharField(max_length=100, default="", blank=True)
 
     comment = models.CharField(max_length=1024, default="", blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -133,7 +135,7 @@ class US_Member(models.Model):
     UserServices = models.ForeignKey(to=UserServices, on_delete=models.CASCADE)
     Type = models.CharField(max_length=100, default="STAFF", choices=Type_CHOICES, blank=True, null=True)
     member = models.ForeignKey(to=User, on_delete=models.SET_NULL,related_name="member", null=True)
-    user_add = models.ForeignKey(to=User, on_delete=models.SET_NULL,related_name="user_add", null=True)
+    user = models.ForeignKey(to=User, on_delete=models.SET_NULL,related_name="user_add", null=True)
     comment = models.CharField(max_length=1024, default="", blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -232,14 +234,23 @@ class US_MenuItems(models.Model):
         ["ACTIVE", "ACTIVE"],
         ["NOTACTIVE", "NOTACTIVE"],
     )
-    US_MenuType = models.ForeignKey(to=US_MenuType, on_delete=models.CASCADE)
-    Photos = models.ForeignKey(to=Photos, on_delete=models.CASCADE)
+    US_Menu = models.ForeignKey(to=US_Menu, on_delete=models.CASCADE)
+    Avatar = models.ForeignKey(to=Photos, on_delete=models.SET_NULL,related_name="Avatar", blank=True, null=True)
+    Background = models.ForeignKey(to=Photos, on_delete=models.SET_NULL,related_name="Background", blank=True, null=True)
+    pictures1 = models.ForeignKey(to=Photos, on_delete=models.SET_NULL,related_name="pictures1", blank=True, null=True)
+    pictures2 = models.ForeignKey(to=Photos, on_delete=models.SET_NULL,related_name="pictures2", blank=True, null=True)
+    pictures3 = models.ForeignKey(to=Photos, on_delete=models.SET_NULL,related_name="pictures3", blank=True, null=True)
     Name = models.CharField(max_length=100, default="", blank=True)
-    Type = models.CharField(max_length=100, choices=Type_CHOICES, default="ACTIVE", blank=True)
+    Status = models.CharField(max_length=100, choices=Type_CHOICES, default="ACTIVE", blank=True)
+    Type = models.CharField(max_length=255, default="", blank=True)
+    TypeDetails = models.CharField(max_length=255, default="", blank=True)
+    Tag = models.CharField(max_length=255, default="", blank=True)
     Price = models.IntegerField(default=0, null=True)
     Unit = models.CharField(max_length=100, blank=True, null=True)
     OrderOnline = models.BooleanField(default=True, null=True, blank=True)
     Discount = models.IntegerField(default=0, blank=True)
+    ShortDescription = models.CharField(max_length=1024, default="", blank=True)
+    Description = models.CharField(max_length=1024, default="", blank=True)
     user = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True)
     comment = models.CharField(max_length=1024, default="", blank=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -317,3 +328,22 @@ class US_History(models.Model):
         ordering = ['-id']
     def __str__(self): 
         return f"{self.UserServices.ServiceCode}"
+
+class Ipays(models.Model):
+    Type_CHOICES = (
+        ["In", "In"],
+        ["Out", "Out"],
+    )
+    Type = models.CharField(max_length=100, default="STAFF", choices=Type_CHOICES, blank=True, null=True)
+    US_Orders = models.ForeignKey(to=US_Orders, on_delete=models.SET_NULL, blank=True, null=True)
+    Value = models.CharField(max_length=100, default="", blank=True)
+    user = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True)
+    remark = models.CharField(max_length=100, default="", blank=True)
+    comment = models.CharField(max_length=1024, default="", blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ['-id']
+    def __str__(self): 
+        return f"{self.Type}_{self.Value}"
+

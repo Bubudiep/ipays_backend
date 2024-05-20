@@ -23,17 +23,6 @@ class PhotosAdmin(admin.ModelAdmin):
     readonly_fields = ["user","img_tag"]
     save_as = True
 
-@admin.register(Services)
-class ServicesAdmin(admin.ModelAdmin):
-    list_per_page = 10
-    list_display = ['id', 
-    "ServiceCode",
-    "ServiceName",
-    "created",
-    "updated"]
-    search_fields = ['ServiceCode']
-    save_as = True
-
 @admin.register(UserServices)
 class UserServicesAdmin(admin.ModelAdmin):
     list_per_page = 10
@@ -64,7 +53,6 @@ class UserProfileAdmin(admin.ModelAdmin):
     "fullname",
     "birthday",
     "adr_tinh",
-    "adr_thanhpho",
     "adr_huyen",
     "adr_xa",
     "comment",
@@ -72,7 +60,38 @@ class UserProfileAdmin(admin.ModelAdmin):
     "updated"]
     search_fields = ['user']
     list_editable = ['comment']
-    list_filter = ['user','adr_tinh','adr_thanhpho','adr_huyen','adr_xa']
+    list_filter = ['user','adr_tinh','adr_huyen','adr_xa']
     raw_id_fields = ['user']
+    readonly_fields = []
+    save_as = True
+
+@admin.register(Services)
+class ServicesAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = ['id', 
+    "ServiceCode",
+    "ServiceName",
+    "created",
+    "updated"]
+    search_fields = ['ServiceCode','ServiceName']
+    list_editable = []
+    raw_id_fields = []
+    readonly_fields = []
+    save_as = True
+
+@admin.register(US_Rooms)
+class US_RoomsAdmin(admin.ModelAdmin):
+    list_per_page = 10
+    list_display = ['id', 
+    "RoomName",
+    "US_Floor",
+    "Status",
+    "user",
+    "comment",
+    "created",
+    "updated"]
+    search_fields = ['ServiceCode','ServiceName']
+    list_editable = []
+    raw_id_fields = []
     readonly_fields = []
     save_as = True

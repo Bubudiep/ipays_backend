@@ -76,16 +76,21 @@ CORS_ORIGIN_ALLOW_ALL=True
 CORS_ORIGIN_WHITELIST = [
     'https://ipays.vn',
     'http://ipays.vn',
-    'http://localhost']
+    'http://localhost','http://127.0.0.1',
+    'http://171.228.191.130',
+    'http://171.228.191.130:8000']
 
-CORS_ALLOW_ALL_ORIGINS = True # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
+CORS_ALLOW_ALL_ORIGINS = False # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ['http://localhost','http://127.0.0.1','http://ipays.vn','https://ipays.vn']
-CSRF_TRUSTED_ORIGINS = ['http://localhost']
+CORS_ALLOWED_ORIGINS = ['http://localhost','http://127.0.0.1','http://ipays.vn','https://ipays.vn','http://171.228.191.130',
+    'http://171.228.191.130:8000']
+CSRF_TRUSTED_ORIGINS = ['http://localhost','http://171.228.191.130','http://127.0.0.1',
+    'http://171.228.191.130:8000']
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 CORS_ALLOW_METHODS = ("DELETE","GET","OPTIONS","PATCH","POST","PUT",)
-ALLOWED_HOSTS = ['192.168.1.5','localhost','http://ipays.vn','https://ipays.vn']
+ALLOWED_HOSTS = ['192.168.1.5','localhost','http://ipays.vn','https://ipays.vn','171.228.191.130','127.0.0.1',
+    '171.228.191.130:8000']
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
